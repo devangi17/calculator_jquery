@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<link rel="stylesheet" type="text/css" href="calculator.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		function operation(op)
+		{
+			var result;
+			 var x=Number(document.getElementById("in_num1").value);
+			 var y=Number(document.getElementById("in_num2").value);
+			if (op=="add") {
+				 result=x+y;
+			}
+			else if (op=="sub") {
+				 result=x-y;
+			}
+			else if (op=="mul") {
+				result=x*y;
+			}
+			else{
+				result=x/y;
+			}
+			
+
+			document.getElementById("display").value=result;
+			
+		}
+		//document.getElementById("display").innerHTML(result);
+		
+	</script>
+	<script>
+		$(document).ready(function(){
+			setInterval(function(){
+				var hex = Array(0,1,2,3,4,5,6,7,8,9,"A","B","C","D","E","F");
+
+				var r = hex[Math.floor(Math.random() * hex.length)] + hex[Math.floor(Math.random() * hex.length)];
+				var g = hex[Math.floor(Math.random() * hex.length)] + hex[Math.floor(Math.random() * hex.length)];
+
+				var b = hex[Math.floor(Math.random() * hex.length)] + hex[Math.floor(Math.random() * hex.length)];
+				var hex = "#"+r+g+b;
+				$('.div').css("background-color", hex);
+				$("#para").fadeOut("slow");
+    			$("#para").fadeIn("slow");
+    			$("#para").css("font-weight","Bold");
+    			$("#para").css("color","#cb9ace");
+    			
+
+			},1500)
+			$("input").hover(function(){
+        			$(this).css("background-color", "yellow");
+        			}, function(){
+        			$(this).css("background-color", "white");
+    				});		
+
+		});
+	</script>
+</head>
+<body>
+	<div class="div" style="width: 100%; height: 100%;">
+	<center class="container">
+		<p id="para">Calculator</p>
+		<p>Enter number :</p><br>
+		<input type="number" name="num1" id="in_num1" class="input">
+		<p>Enter number :</p><br>
+		<input type="number" name="num2" id="in_num2" class="input">
+		<br><br><br>
+		<input type="button"  class="rotate" id="add" value="+" onclick="operation(this.id)"></button>
+		<input type="button"   id="sub" class="rotate" value="-" onclick="operation(this.id)"></button>
+		<br><br>
+		<input type="button"  id="mul" value="*" class="rotate" onclick="operation(this.id)"></button>
+		<input type="button"  id="div" value="/" class="rotate" onclick="operation(this.id)"></button>
+		<P>Result:</P>
+		<input  name="display" id="display" disabled="disabled" class="input"></output> 
+
+
+	</center>
+	</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+.container {
+    background: black;
+    position:relative;
+    text-align: center;
+    vertical-align: center;
+    color: white;
+    width: 50%;
+    padding-top: 20px;
+    margin-left: 300px;
+    padding-left: 60px;
+    /*margin-top: 60px;*/
+    padding-bottom: 20px;
+    font-size: 30px;
+    border-radius: 30px;
+
+}
+.input{
+ 	border-radius: 5px;
+ 	width: 20%;
+ 	height: 40px;
+ 	font-size: 20px;
+
+ }
+#para{
+	font-size: 50px;
+	color: #66e0ff;
+}
+.rotate{
+    border-radius: 10%;
+    width: 10%;
+    height: 40px;
+    font-size: 35px;
+}
